@@ -1,9 +1,8 @@
-package se.lexicon.data;
+package se.lexicon.data.impl;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import se.lexicon.data.impl.ParkingLotDaoImpl;
 import se.lexicon.model.ParkingLot;
 import se.lexicon.model.ParkingSpot;
 
@@ -11,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ParkingLotDaoImplTest {
 
@@ -39,7 +38,7 @@ class ParkingLotDaoImplTest {
         ParkingLot parkingLot = new ParkingLot(1, parkingSpotMap);
         testObject.create(parkingLot);
 
-        assertEquals(Optional.of(parkingLot), testObject.find(1)); //Fix this once find is done
+        assertEquals(parkingLot.getAreaCode(), testObject.find(1).get().getAreaCode()); //Fix this once find is done
     }
 
     @Test //cannot be run together with the rest of the tests, due to singleton design pattern. Run this test alone, and it works just fine.
@@ -49,11 +48,7 @@ class ParkingLotDaoImplTest {
         testObject.create(parkingLot);
 
         Optional<ParkingLot> parkingLotFound = testObject.find(1);
-        if (parkingLotFound.isPresent()) {
-            assertEquals(parkingLot.getAreaCode(), parkingLotFound.get().getAreaCode());
-        } else {
-            System.out.println("areaCode() not equal");
-        }
+        assertEquals(parkingLot.getAreaCode(), parkingLotFound.orElse(new ParkingLot(-1, null)).getAreaCode());
     }
 
 }

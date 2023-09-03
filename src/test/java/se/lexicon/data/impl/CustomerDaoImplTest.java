@@ -1,9 +1,8 @@
-package se.lexicon.data;
+package se.lexicon.data.impl;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import se.lexicon.data.impl.CustomerDaoImpl;
 import se.lexicon.model.Customer;
 
 import java.util.Optional;

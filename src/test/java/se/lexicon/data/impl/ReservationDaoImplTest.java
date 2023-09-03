@@ -1,4 +1,4 @@
-package se.lexicon.data;
+package se.lexicon.data.impl;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

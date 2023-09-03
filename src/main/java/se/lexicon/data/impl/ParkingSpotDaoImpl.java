@@ -24,7 +24,6 @@ public class ParkingSpotDaoImpl implements ParkingSpotDao {
         return instance;
     }
 
-
     @Override
     public ParkingSpot create(ParkingSpot parkingSpot) {
         if (parkingSpot == null) throw new IllegalArgumentException("Parking spot is null.");

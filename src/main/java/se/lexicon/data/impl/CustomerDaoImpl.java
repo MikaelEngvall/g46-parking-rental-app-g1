@@ -32,7 +32,7 @@ public class CustomerDaoImpl implements CustomerDao {
     @Override
     public Customer create(Customer customer) {
         if (customer == null) throw new IllegalArgumentException("Customer Data is null.");
-        //Customer model = new Customer(CustomerIdSequencer.nextId(), customer.getName(), customer.getPhoneNumber());
+//        Customer model = new Customer(CustomerIdSequencer.nextId(), customer.getName(), customer.getPhoneNumber());
         customer.setId(CustomerIdSequencer.nextId());
         storage.add(customer);
         return customer;

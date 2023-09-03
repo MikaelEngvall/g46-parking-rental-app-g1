@@ -7,18 +7,18 @@ import java.util.Map;
 public class ParkingLot {
 
     // Fields
-    private int areCode;
+    private int areaCode;
     private Map<Integer, ParkingSpot> parkingSpotMap;
 
     // Constructors
-    public ParkingLot(int areCode, Map<Integer, ParkingSpot> parkingSpotMap) {
-        this.areCode = areCode;
+    public ParkingLot(int areaCode, Map<Integer, ParkingSpot> parkingSpotMap) {
+        this.areaCode = areaCode;
         this.parkingSpotMap = parkingSpotMap;
     }
 
     // Getters
-    public int getAreCode() {
-        return areCode;
+    public int getAreaCode() {
+        return areaCode;
     }
 
     public List<ParkingSpot> getParkingSpots() {

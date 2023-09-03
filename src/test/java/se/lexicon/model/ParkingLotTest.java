@@ -26,7 +26,7 @@ public class ParkingLotTest {
     @Test
     public void testGetAreaCode() {
         int expectedAreCode = 123;
-        assertEquals(expectedAreCode, testObject.getAreCode());
+        assertEquals(expectedAreCode, testObject.getAreaCode());
     }
 
     @Test

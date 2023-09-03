@@ -9,7 +9,7 @@ public class Vehicle {
     // Constructor
     public Vehicle(String licensePlate, VehicleType type) {
         this.licensePlate = licensePlate;
-        this.type = type;
+        this.type = type; //Here, one of the constants in VehicleType are being assigned to 'type'
     }
 
     // Getters

@@ -1,8 +1,9 @@
-package se.lexicon.data.impl;
+package se.lexicon.data;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import se.lexicon.data.impl.ParkingLotDaoImpl;
 import se.lexicon.model.ParkingLot;
 import se.lexicon.model.ParkingSpot;
 

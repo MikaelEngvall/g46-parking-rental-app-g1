@@ -1,6 +1,5 @@
 package se.lexicon.data.impl;
 
-import se.lexicon.data.ParkingSpotDao;
 import se.lexicon.data.ReservationDao;
 import se.lexicon.model.Reservation;
 
@@ -30,17 +29,10 @@ public class ReservationDaoImpl implements ReservationDao {
         if (reservation == null) throw new IllegalArgumentException("Reservation is null.");
         // Implementing the create method
         reservations.add(reservation);
-
-        // Get an instance of ParkingSpotDaoImpl
-        ParkingSpotDao parkingSpotDao = ParkingSpotDaoImpl.getInstance();
-
-        // Call the occupyParkingSpot method on the instance with the appropriate spot number
-        parkingSpotDao.occupyParkingSpot(reservation.getParkingSpot().getSpotNumber());
-
+//        ParkingSpotDaoImpl.occupyParkingSpot(reservation.getParkingSpot()); todo How do I get access to this?
+//        Do I even have/must to do it here?
         return reservation;
     }
-
-
 
     @Override
     public Optional<Reservation> find(String reservationId) {

@@ -1,6 +1,7 @@
 package se.lexicon.model;
 
 import java.time.LocalTime;
+import java.util.UUID;
 
 public class Reservation {
 
@@ -14,7 +15,12 @@ public class Reservation {
 
     // Constructors
 
+    public Reservation() {
+        this.id = UUID.randomUUID().toString();
+    }
+
     public Reservation(LocalTime startTime, LocalTime endTime, ParkingSpot parkingSpot) {
+        this();
         this.startTime = startTime;
         this.endTime = endTime;
         this.parkingSpot = parkingSpot;
@@ -30,6 +36,7 @@ public class Reservation {
     }
 
     public Reservation(LocalTime startTime, LocalTime endTime, Customer customer, ParkingSpot parkingSpot, Vehicle associatedVehicle) {
+        this();
         this.startTime = startTime;
         this.endTime = endTime;
         this.customer = customer;

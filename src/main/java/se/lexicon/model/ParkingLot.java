@@ -49,6 +49,5 @@ public class ParkingLot {
                 System.out.println("------------------------");
             }
         }
-        System.out.println("------------------------");
     }
 }

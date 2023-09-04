@@ -27,22 +27,16 @@ public class App {
         Customer customer = new Customer("Test Testson", "123456");
         customerDao.create(customer);
         ParkingSpot parkingSpot = new ParkingSpot(12, false);
-        System.out.println("Spot : " + parkingSpot.getSpotNumber() + " is " + (parkingSpot.isOccupied() ? " occupied" : " free"));
+        System.out.println("Parking spot " + parkingSpot.getSpotNumber() + " is now" + (parkingSpot.isOccupied() ? " occupied" : " free"));
         Vehicle vehicle = new Vehicle("ABC123", CAR);
-        Reservation reservation = new Reservation(LocalTime.of(0,1), LocalTime.of(23,59), customer,parkingSpot, vehicle);
-        reservationDao.create(reservation);
+        Reservation reservation = new Reservation(LocalTime.of(0,1), LocalTime.of(23,59), customer, parkingSpot, vehicle);
+        reservationDao.create(reservation); // Here we reserve the spot and state it occupied
+        System.out.println("Reserving parking spot : " + reservation.getParkingSpot().getSpotNumber());
+        System.out.println("Parking spot " + parkingSpot.getSpotNumber() + " is now" + (parkingSpot.isOccupied() ? " occupied" : " free"));
+        reservationDao.remove(reservation); // Here we vacate the spot and state it free
+        System.out.println("Leaving parking spot : " + reservation.getParkingSpot().getSpotNumber());
+        System.out.println("Parking spot " + parkingSpot.getSpotNumber() + " is now" + (parkingSpot.isOccupied() ? " occupied" : " free"));
 
-        System.out.println("Parking spot reserved : " + reservation.getParkingSpot().getSpotNumber());
-        System.out.println("Spot " + parkingSpot.getSpotNumber() + " is " + (parkingSpot.isOccupied() ? " occupied" : " free"));
-
-
-
-
-        customerDao.create(new Customer("Mehrdad", "123456"));
-        System.out.println(customerDao.findAll().size()); // 2
-//
-        customerDao = CustomerDaoImpl.getInstance();
-        System.out.println(customerDao.findAll().size()); // 2
 
     }
 }

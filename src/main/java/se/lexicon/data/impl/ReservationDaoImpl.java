@@ -29,11 +29,17 @@ public class ReservationDaoImpl implements ReservationDao {
         if (reservation == null) throw new IllegalArgumentException("Reservation is null.");
         // Implementing the create method
         reservations.add(reservation);
-//        ParkingSpotDaoImpl.occupyParkingSpot(reservation.getParkingSpot()); todo How do I get access to this?
-//        Do I even have/must to do it here?
+        reservation.getParkingSpot().occupy(); // This states the spot occupied
         return reservation;
     }
-
+    @Override
+    public Reservation remove(Reservation reservation) {
+        if (reservation == null) throw new IllegalArgumentException("Reservation is null.");
+        // Implementing the create method
+        reservations.remove(reservation);
+        reservation.getParkingSpot().vacate(); // This states the spot free
+        return reservation;
+    }
     @Override
     public Optional<Reservation> find(String reservationId) {
         if (reservationId == null) throw new IllegalArgumentException("Reservation Id is null.");

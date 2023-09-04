@@ -59,7 +59,7 @@ public class ParkingSpotDaoImpl implements ParkingSpotDao {
         Optional<ParkingSpot> optionalParkingSpot = find(spotNumber); // We put the spotNumber in the optionalParkingSpot if found
         if (optionalParkingSpot.isPresent()) {
             ParkingSpot parkingSpot = optionalParkingSpot.get(); // gets the spot (safe since we already found it in the if-statement
-            parkingSpot.occupy();  // state the spot as occupied
+//            parkingSpot.occupy();  // todo should state the spot occupied but doesn't? Why?
         }
     }
 

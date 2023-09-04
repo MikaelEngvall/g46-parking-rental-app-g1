@@ -3,7 +3,6 @@ package se.lexicon.data.impl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import se.lexicon.data.impl.ReservationDaoImpl;
 import se.lexicon.data.sequencer.CustomerIdSequencer;
 import se.lexicon.model.*;
 

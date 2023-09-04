@@ -7,6 +7,8 @@ import java.util.Optional;
 public interface ReservationDao extends BaseDao<Reservation, String> {
 
      Reservation create(Reservation t);
+     Reservation remove(Reservation t);
+
 
      Optional<Reservation> find(String id);
 
